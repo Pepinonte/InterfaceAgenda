@@ -1,0 +1,10 @@
+<!-- structure des séances -->
+<seances>
+    <seance id="1">
+        <dateArrivee>Fri Feb 5 2021</dateArrivee>
+        <heureArrivee>16:32:57</heureArrivee>
+        <dateDepart>Sun Feb 14 2021</dateDepart>
+        <heureDepart>16:32:57</heureDepart>
+        <typeClient>confirme</typeClient>
+    </seance>
+</seances>

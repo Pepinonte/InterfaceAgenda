@@ -1,0 +1,8 @@
+<!-- structure des séances -->
+<seances>
+    <seance id="1">
+        <heureArrivee>15:30</heureArrivee>
+        <heureDepart>17:30</heureDepart>
+        <typeClient>scolaire</typeClient>
+    </seance>
+</seances>

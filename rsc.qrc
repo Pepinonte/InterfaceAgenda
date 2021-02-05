@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>img/pngegg.png</file>
+        <file>img/pngegg (1).png</file>
+        <file>img/pngegg (2).png</file>
+        <file>img/sup.png</file>
+        <file>img/sky-starry-milky-way-landscape-backgrounds-wallpapers.jpg</file>
+    </qresource>
+</RCC>
