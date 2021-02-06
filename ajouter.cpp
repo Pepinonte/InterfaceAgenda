@@ -2,6 +2,7 @@
 #include "ui_ajouter.h"
 #include <QDebug>
 #include <QFile>
+#include <QXmlStreamWriter>
 
 ajouter::ajouter(QWidget *parent) :
     QDialog(parent),
@@ -34,33 +35,55 @@ void ajouter::on_pushButton_clicked()
     qDebug()<<"heureArrivee:"<<heureArrivee.toString();
     qDebug()<<"heureDepart:"<<heureDepart.toString();
 
+    QString fileXmlName = "C:/Users/Christian GROS/Desktop/xmlClass/test3.xml";
+    QFile fileXml(fileXmlName);
 
-    QString fichier = "C:/Users/Christian GROS/Desktop/agendaInterface-20210129T071652Z-001/agendaInterface/xml/test3.xml";
+    // Ouverture du fichier en écriture et en texte. (sort de la fonction si le fichier ne s'ouvre pas)
+    if(!fileXml.open(QFile::WriteOnly | QFile::Text))
+        qDebug()<<"erreur";
 
-    QFile file(fichier); // Appel du constructeur de la classe QFile
+    QXmlStreamWriter writer(&fileXml);
 
-    if (file.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-    // Si l'ouverture du fichier en écriture à réussie
+    // Active l'indentation automatique du fichier XML pour une meilleur visibilité
+    writer.setAutoFormatting(true);
 
-    // écrire dans le fichier
+    // Insert la norme de codification du fichier XML :
+    writer.writeStartDocument();
 
-    QTextStream out(&file);
-    out<<("<!-- structure des séances -->\n");
-    out<<("<seances>\n");
-    out<<("    <seance id=\"1\">\n");
-    out<<("        <dateArrivee>" + dateArrivee.toString() + "</dateArrivee>\n");
-    out<<("        <heureArrivee>" + heureArrivee.toString() + "</heureArrivee>\n");
-    out<<("        <dateDepart>" + dateDepart.toString() + "</dateDepart>\n");
-    out<<("        <heureDepart>" + heureDepart.toString() + "</heureDepart>\n");
-    out<<("        <typeClient>" + type + "</typeClient>\n");
-    out<<("    </seance>\n");
-    out<<("</seances>\n");
+    // Élément racine du fichier XML
+    writer.writeStartElement("seances");
 
-    // Fermer le fichier
-    file.close();
+    // Ajoute l'élément "seance" dans le fichier XML
+    writer.writeStartElement("seance");
+
+    // Ajoute un élément "dateArrivee", lui applique le texte "bzhenel" et ferme l'élément "nom"
+    writer.writeTextElement("dateArrivee", dateArrivee.toString());
+
+    // Ajoute l'élément "heureArrivee", lui applique le texte "www.bzhenel.fr" et ferme l'élément "url"
+    writer.writeTextElement("heureArrivee", heureArrivee.toString());
+
+    // Ajoute un élément "dateArrivee", lui applique le texte "bzhenel" et ferme l'élément "nom"
+    writer.writeTextElement("dateDepart", dateDepart.toString());
+
+    // Ajoute l'élément "heureArrivee", lui applique le texte "www.bzhenel.fr" et ferme l'élément "url"
+    writer.writeTextElement("heureDepart", heureDepart.toString());
+
+    // Ajoute l'élément "heureArrivee", lui applique le texte "www.bzhenel.fr" et ferme l'élément "url"
+    writer.writeTextElement("typeClient", type);
+
+    // Ferme l'élément seance
+    writer.writeEndElement();
+
+    // Finalise le document XML
+    writer.writeEndDocument();
+
+    // Fermer le fichier pour bien enregistrer le document et ferme l'élément root
+    fileXml.close();
 
 
-    }
+
+
+
+
 
 }
