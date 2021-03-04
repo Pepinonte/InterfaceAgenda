@@ -44,31 +44,33 @@ void editSeance::on_pushButton_clicked()
     qDebug()<<"test";
 
 
-    QString fichier = "C:/Users/Christian GROS/Desktop/agendaInterface-20210129T071652Z-001/agendaInterface/xml/test3.xml";
+//    QString fichier = "C:/Users/Christian GROS/Desktop/agendaInterface-20210129T071652Z-001/agendaInterface/xml/test3.xml";
 
-    QFile file(fichier); // Appel du constructeur de la classe QFile
+//    QFile file(fichier); // Appel du constructeur de la classe QFile
 
-    if (file.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-    // Si l'ouverture du fichier en écriture à réussie
+//    if (file.open(QIODevice::WriteOnly | QIODevice::Text))
+//    {
+//    // Si l'ouverture du fichier en écriture à réussie
 
-    // écrire dans le fichier
+//    // écrire dans le fichier
 
-    QTextStream out(&file);
-    out<<("<!-- structure des séances -->\n");
-    out<<("<seances>\n");
-    out<<("    <seance id=\"1\">\n");
-    out<<("        <dateArrivee>" + dateArrivee.toString() + "</dateArrivee>\n");
-    out<<("        <heureArrivee>" + heureArrivee.toString() + "</heureArrivee>\n");
-    out<<("        <dateDepart>" + dateDepart.toString() + "</dateDepart>\n");
-    out<<("        <heureDepart>" + heureDepart.toString() + "</heureDepart>\n");
-    out<<("        <typeClient>" + type + "</typeClient>\n");
-    out<<("    </seance>\n");
-    out<<("</seances>\n");
+//    QTextStream out(&file);
+//    out<<("<!-- structure des séances -->\n");
+//    out<<("<seances>\n");
+//    out<<("    <seance id=\"1\">\n");
+//    out<<("        <dateArrivee>" + dateArrivee.toString() + "</dateArrivee>\n");
+//    out<<("        <heureArrivee>" + heureArrivee.toString() + "</heureArrivee>\n");
+//    out<<("        <dateDepart>" + dateDepart.toString() + "</dateDepart>\n");
+//    out<<("        <heureDepart>" + heureDepart.toString() + "</heureDepart>\n");
+//    out<<("        <typeClient>" + type + "</typeClient>\n");
+//    out<<("    </seance>\n");
+//    out<<("</seances>\n");
 
-    // Fermer le fichier
-    file.close();
-    }
+//    // Fermer le fichier
+//    file.close();
+//    }
+
+    xml.modElement(xml,dateArrivee.toString(), dateDepart.toString(), heureDepart.toString(), heureArrivee.toString(), type);
 }
 
 void editSeance::on_calendarWidget_clicked(const QDate &date)

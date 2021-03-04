@@ -1,4 +1,5 @@
 QT       += core gui
+QT += xml
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -17,18 +18,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     ajouter.cpp \
     editseance.cpp \
+    gestionxml.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    supseance.cpp
 
 HEADERS += \
     ajouter.h \
     editseance.h \
-    mainwindow.h
+    gestionxml.h \
+    mainwindow.h \
+    supseance.h
 
 FORMS += \
     ajouter.ui \
     editseance.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    supseance.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -2,6 +2,7 @@
 #define EDITSEANCE_H
 
 #include <QDialog>
+#include "gestionxml.h"
 
 namespace Ui {
 class editSeance;
@@ -21,6 +22,7 @@ private slots:
 
 private:
     Ui::editSeance *ui;
+    gestionXml xml;
 };
 
 #endif // EDITSEANCE_H

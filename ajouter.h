@@ -2,6 +2,7 @@
 #define AJOUTER_H
 
 #include <QDialog>
+#include "gestionxml.h"
 
 namespace Ui {
 class ajouter;
@@ -20,6 +21,7 @@ private slots:
 
 private:
     Ui::ajouter *ui;
+    gestionXml xml;
 };
 
 #endif // AJOUTER_H
