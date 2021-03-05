@@ -23,9 +23,7 @@ void gestionXml::openFile(QString path)
 void gestionXml::readElement(QString data)
 {
     dom_element = document.documentElement();
-
     noeud = dom_element.firstChild();
-
     QDomElement domElement = noeud.toElement();
         while (!noeud.isNull()) {
             QDomElement domElement = noeud.toElement();
@@ -36,15 +34,37 @@ void gestionXml::readElement(QString data)
                         QDomElement element = node.toElement();
                         if (!element.isNull()) {
                             const QString tagName(element.tagName());
-                            if (tagName == data) {
-                                qDebug() << data << " is:" << element.text();
+                            if (tagName == "dateArrivee") {
+                                if(element.text() == data){
+                                    qDebug() << "dateArrivee" << " is:" << element.text();
+                                    QDomNode node = domElement.firstChild();
+                                    while (!node.isNull()) {
+                                        QDomElement element = node.toElement();
+                                        if (!element.isNull()) {
+                                            const QString tagName(element.tagName());
+                                            if (tagName == "heureArrivee") {
+                                                qDebug() << "heureArrivee" << " is:" << element.text();
+                                            }
+                                            if (tagName == "dateDepart") {
+                                                qDebug() << "dateDepart" << " is:" << element.text();
+                                            }
+                                            if (tagName == "heureDepart") {
+                                                qDebug() << "heureDepart" << " is:" << element.text();
+                                            }
+                                            if (tagName == "typeClient") {
+                                                qDebug() << "datetypeClientDepart" << " is:" << element.text();
+                                            }
+                                        node = node.nextSibling();
+                                        }
+                                    }
+                                }
                             }
                         node = node.nextSibling();
                         }
                     }
                 }
             }
-                noeud = noeud.nextSibling();
+    noeud = noeud.nextSibling();
     }
     file.close();
 }
@@ -195,14 +215,7 @@ void gestionXml::supElement(QString data, QString id)
     noeud = dom_element.firstChild();
     QDomElement domElement = noeud.toElement();
     QDomElement lastEEEE = lastElem.toElement();
-//    int somme;
     int i = 0;
-
-//    for (i=0; !noeud.isNull(); i=i+1){
-
-//        somme = somme + i;
-//        qDebug()<<i;
-//    }
 
 
     while (!noeud.isNull()) {
@@ -210,9 +223,6 @@ void gestionXml::supElement(QString data, QString id)
         if (!domElement.isNull()) {
             if (domElement.tagName()=="seance" && domElement.attribute("id")==id) {
                 qDebug()<<domElement.attribute("id").toInt();
-//                domElement.removeChild(domElement.firstChildElement());
-//                qDebug()<<domElement.nodeValue().toInt();
-//                lastElem.parentNode().removeChild(lastElem);
                 i = 0;
             }
             i++;
@@ -238,6 +248,42 @@ void gestionXml::supElement(QString data, QString id)
 
 void gestionXml::modElement(gestionXml& xml, QString dateArrivee, QString dateDepart, QString heureDepart, QString heureArrivee, QString type)
 {
-    xml.supElement("seance", "2");
+    xml.supElement("seance", QString::number(xml.getId()));
     xml.newSeance(dateArrivee,dateDepart,heureDepart,heureArrivee,type);
+}
+
+void gestionXml::setId(QString tag)
+{
+    dom_element = document.documentElement();
+    noeud = dom_element.firstChild();
+    int idm;
+    QDomElement domElement = noeud.toElement();
+        while (!noeud.isNull()) {
+            QDomElement domElement = noeud.toElement();
+            if (!domElement.isNull()) {
+                if (domElement.tagName() == "seance") {
+                    idm = domElement.attribute("id").toInt();
+                    QDomNode node = domElement.firstChild();
+                    while (!node.isNull()) {
+                        QDomElement element = node.toElement();
+                        if (!element.isNull()) {
+                            const QString tagName(element.tagName());
+                            if (tagName == "dateArrivee") {
+                                if(element.text() == tag){
+                                    id = idm;
+                                }
+                            }
+                        node = node.nextSibling();
+                        }
+                    }
+                }
+            }
+    noeud = noeud.nextSibling();
+    }
+    file.close();
+}
+
+int gestionXml::getId()
+{
+    return id;
 }

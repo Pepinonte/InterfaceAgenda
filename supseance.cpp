@@ -15,5 +15,17 @@ supSeance::~supSeance()
 
 void supSeance::on_pushButton_clicked()
 {
-    xml.supElement("seance", "2");
+    int a = xml.getId();
+    qDebug()<<a;
+    qDebug()<<QString::number(a);
+    xml.supElement("seance", QString::number(a));
+}
+
+
+void supSeance::on_calendarWidget_clicked(const QDate &date)
+{
+    xml.openFile("C:/Users/Christian GROS/Desktop/xmlClass/test3.xml");
+    dateClicked = date.toString();
+    xml.setId(date.toString());
+    qDebug()<<xml.getId();
 }

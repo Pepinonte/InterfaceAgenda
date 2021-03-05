@@ -59,7 +59,7 @@ QCalendarWidget QAbstractItemView:enabled{
     </rect>
    </property>
    <property name="title">
-    <string>GroupBox</string>
+    <string/>
    </property>
    <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">

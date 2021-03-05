@@ -19,9 +19,12 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_calendarWidget_clicked(const QDate &date);
+
 private:
     Ui::supSeance *ui;
     gestionXml xml;
+    QString dateClicked;
 };
 
 #endif // SUPSEANCE_H
