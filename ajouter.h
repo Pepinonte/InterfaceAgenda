@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "gestionxml.h"
+#include "sockettest.h"
 
 namespace Ui {
 class ajouter;
@@ -22,6 +23,7 @@ private slots:
 private:
     Ui::ajouter *ui;
     gestionXml xml;
+    SocketTest cTest;
 };
 
 #endif // AJOUTER_H

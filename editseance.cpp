@@ -44,16 +44,16 @@ void editSeance::on_pushButton_clicked()
 
 //    xml.readElement("dateArrivee");
 
-    xml.modElement(xml,dateArrivee.toString(), dateDepart.toString(), heureDepart.toString(), heureArrivee.toString(), type);
+//    xml.modElement(dateArrivee.toString(), dateDepart.toString(), heureDepart.toString(), heureArrivee.toString(), type);
 }
 
 void editSeance::on_calendarWidget_clicked(const QDate &date)
 {
     ui->lineEdit->setText(date.toString());
 
-    xml.openFile("C:/Users/Christian GROS/Desktop/xmlClass/test3.xml");
+    xml.openFile("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
     xml.readElement(date.toString());
-    xml.setId(date.toString());
-    qDebug()<<xml.getId();
+//    xml.setId(date.toString());
+//    qDebug()<<xml.getId();
 }
 

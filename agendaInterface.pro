@@ -1,5 +1,6 @@
 QT       += core gui
 QT += xml
+QT       += network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -21,6 +22,7 @@ SOURCES += \
     gestionxml.cpp \
     main.cpp \
     mainwindow.cpp \
+    sockettest.cpp \
     supseance.cpp
 
 HEADERS += \
@@ -28,6 +30,7 @@ HEADERS += \
     editseance.h \
     gestionxml.h \
     mainwindow.h \
+    sockettest.h \
     supseance.h
 
 FORMS += \

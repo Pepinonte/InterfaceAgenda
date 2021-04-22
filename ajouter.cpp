@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QXmlStreamWriter>
 
+
 ajouter::ajouter(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ajouter)
@@ -29,6 +30,9 @@ void ajouter::on_pushButton_clicked()
     QTime heureDepart = ui->heureDepart->time();
     QTime heureArrivee = ui->heureArrivee->time();
     QString type = ui->type->currentText();
+
+//    cTest.Connect();
+    xml.openFile("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
 
     xml.newSeance(dateArrivee.toString(), dateDepart.toString(), heureDepart.toString(), heureArrivee.toString(), type);
 }
