@@ -173,7 +173,7 @@ void gestionXml::newSeance(QString dateArrivee, QString dateDepart, QString heur
 void gestionXml::supElement(QString id)
 {
 
-    QFile file("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
+    QFile file("C:/Users/Christian GROS/Documents/Projet NS2/xmlClass/test3.xml");
 
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
@@ -215,7 +215,7 @@ void gestionXml::supElement(QString id)
     lastElem.parentNode().removeChild(lastElem);
     file.close();
 
-    QFile outFile( "C:/Users/Christian GROS/Documents/xmlClass/test3.xml" );
+    QFile outFile( "C:/Users/Christian GROS/Documents/Projet NS2/xmlClass/test3.xml" );
 
     if( !outFile.open( QIODevice::WriteOnly | QIODevice::Text ) )
         qDebug( "Failed to open file for writing." );
@@ -268,4 +268,50 @@ void gestionXml::setSenace(QString id)
 QString gestionXml::getTab(int n)
 {
     return tab[n];
+}
+
+int gestionXml::getNumberId()
+{
+    QFile file("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qDebug() << "Failed to open file";
+    }
+    QDomDocument document;
+    if (!document.setContent(&file))
+    {
+        qDebug() << "failed to parse file";
+        file.close();
+    }
+
+    file.close();
+
+    QDomNodeList umgVars = dom_element.elementsByTagName("seance");
+
+    QDomNode lastElem = umgVars.at(umgVars.size() - 1);
+    dom_element = document.documentElement();
+    noeud = dom_element.firstChild();
+    QDomElement domElement = noeud.toElement();
+    QDomElement lastEEEE = lastElem.toElement();
+    int id = 0;
+
+    while (!noeud.isNull()) {
+        QDomElement domElement = noeud.toElement();
+        if (!domElement.isNull()) {
+            id++;
+//            qDebug()<<id;
+            if (domElement.attribute("id")!="") {
+                id++;
+//                qDebug()<<id;
+//                qDebug()<<domElement.attribute("id").toInt();
+                id = domElement.attribute("id").toInt();
+
+            }
+//            qDebug()<<"nop";
+        }
+        noeud = noeud.nextSibling();
+    }
+    file.close();
+    qDebug()<<id;
+    return id;
 }
