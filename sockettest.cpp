@@ -19,14 +19,18 @@ void SocketTest::Connect()
 
         xml.openFile("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
 
-//        xml.setSenace("1");
+        int id = xml.getNumberId();
+        QString str;
 
-//        for (int i=0;i<=4;i++)
-//        {
-//            QString tab = xml.getTab(i);
-//            socket->write(tab.toUtf8());
-//            socket->waitForReadyRead(1000);
-//        }
+
+        xml.setSenace(str.setNum(id));
+
+        for (int i=0;i<=4;i++)
+        {
+            QString tab = xml.getTab(i);
+            socket->write(tab.toUtf8());
+            socket->waitForReadyRead(1000);
+        }
 
         socket->write("fin de l'envoie");
         socket->waitForReadyRead(1000);

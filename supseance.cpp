@@ -15,17 +15,23 @@ supSeance::~supSeance()
 
 void supSeance::on_pushButton_clicked()
 {
-//    int a = xml.getId();
-//    qDebug()<<a;
-//    qDebug()<<QString::number(a);
-//    xml.supElement("seance", QString::number(a));
+    int id = xml.getNumberId();
+    QString str;
+
+    xml.supElement(QString::number(id));
 }
 
 
 void supSeance::on_calendarWidget_clicked(const QDate &date)
 {
-    xml.openFile("C:/Users/Christian GROS/Desktop/xmlClass/test3.xml");
+    xml.openFile("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
     dateClicked = date.toString();
+
+    qDebug()<<dateClicked;
+
+//    xml.readElement()
+
+
 //    xml.setId(date.toString());
 //    qDebug()<<xml.getId();
 }

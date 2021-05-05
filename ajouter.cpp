@@ -31,7 +31,7 @@ void ajouter::on_pushButton_clicked()
     QTime heureArrivee = ui->heureArrivee->time();
     QString type = ui->type->currentText();
 
-//    cTest.Connect();
+    cTest.Connect();
     xml.openFile("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
 
     xml.newSeance(dateArrivee.toString(), dateDepart.toString(), heureDepart.toString(), heureArrivee.toString(), type);
