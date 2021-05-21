@@ -1,6 +1,7 @@
 #include "gestionxml.h"
 #include "sockettest.h"
 #include <QByteArray>
+#include <iostream>
 
 SocketTest::SocketTest(QObject *parent) :
     QObject(parent)
@@ -17,7 +18,7 @@ void SocketTest::Connect()
     {
         qDebug() << "Connected!";
 
-        xml.openFile("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
+        xml.openFile(pathG);
 
         int id = xml.getNumberId();
         QString str;

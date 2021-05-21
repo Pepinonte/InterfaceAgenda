@@ -28,6 +28,7 @@ private:
     QDomElement element;
     QDomElement dom_element;
     QString tab[5];
+    QString pathG = "/home/headhtr/Code/InterfaceAgenda/xml/test3.xml";
 };
 
 #endif // GESTIONXML_H

@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+#include "gestionxml.h"
+#include <iostream>
 
 
 #include <QApplication>
