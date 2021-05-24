@@ -216,7 +216,7 @@ QCalendarWidget QAbstractItemView:enabled{
       </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="btnMod">
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	heigth:40px;
