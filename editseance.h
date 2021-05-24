@@ -17,7 +17,7 @@ public:
     ~editSeance();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_btnMod_clicked();
     void on_calendarWidget_clicked(const QDate &date);
 
 private:

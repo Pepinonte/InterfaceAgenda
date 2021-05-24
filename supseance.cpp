@@ -13,7 +13,7 @@ supSeance::~supSeance()
     delete ui;
 }
 
-void supSeance::on_pushButton_clicked()
+void supSeance::on_btnSup_clicked()
 {
     int id = xml.getNumberId();
     QString str;
