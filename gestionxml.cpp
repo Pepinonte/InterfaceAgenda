@@ -17,7 +17,7 @@ void gestionXml::openFile(QString path)
         if(!document.setContent(&file))
             qDebug()<< "erreur lors du chargement";
     }
-//    file.close();
+    file.close();
 }
 
 void gestionXml::readElement(QString data)
@@ -80,7 +80,7 @@ void gestionXml::structSenace(QString path)
 void gestionXml::newSeance(QString dateArrivee, QString dateDepart, QString heureDepart, QString heureArrivee, QString type)
 {
 
-    QFile file("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
+    QFile file(pathG);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         qDebug() << "Failed to open file";
@@ -158,7 +158,7 @@ void gestionXml::newSeance(QString dateArrivee, QString dateDepart, QString heur
 
     docEle.appendChild(seance);
 
-    QFile outFile( "C:/Users/Christian GROS/Documents/xmlClass/test3.xml" );
+    QFile outFile(pathG);
 
     if( !outFile.open( QIODevice::WriteOnly | QIODevice::Text ) )
         qDebug( "Failed to open file for writing." );
@@ -173,7 +173,7 @@ void gestionXml::newSeance(QString dateArrivee, QString dateDepart, QString heur
 void gestionXml::supElement(QString id)
 {
 
-    QFile file("C:/Users/Christian GROS/Documents/Projet NS2/xmlClass/test3.xml");
+    QFile file(pathG);
 
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
@@ -208,14 +208,13 @@ void gestionXml::supElement(QString id)
             i++;
             qDebug()<<i;
             lastElem = umgVars.at(umgVars.size() - i);
-            qDebug()<<"nop";
         }
         noeud = noeud.nextSibling();
     }
     lastElem.parentNode().removeChild(lastElem);
     file.close();
 
-    QFile outFile( "C:/Users/Christian GROS/Documents/Projet NS2/xmlClass/test3.xml" );
+    QFile outFile(pathG);
 
     if( !outFile.open( QIODevice::WriteOnly | QIODevice::Text ) )
         qDebug( "Failed to open file for writing." );
@@ -224,12 +223,14 @@ void gestionXml::supElement(QString id)
     stream << document.toString();
 
     outFile.close();
+
 }
 
-void gestionXml::modElement(gestionXml& xml)
+void gestionXml::modElement(gestionXml& xml, QString dateArrivee, QString dateDepart, QString heureDepart, QString heureArrivee, QString type, int id)
 {
-    xml.supElement("2");
-    xml.newSeance("1","2","3","4","5");
+    QString str;
+    xml.supElement(QString::number(id));
+    xml.newSeance(dateArrivee,dateDepart,heureDepart,heureArrivee,type);
 }
 
 void gestionXml::setSenace(QString id)
@@ -250,7 +251,6 @@ void gestionXml::setSenace(QString id)
                         if (!element.isNull()) {
                             const QString tagName(element.tagName());
                             tab[n] = element.text();
-//                            qDebug() << tab[n];
                             node = node.nextSibling();
                             n++;
                         }
@@ -272,7 +272,7 @@ QString gestionXml::getTab(int n)
 
 int gestionXml::getNumberId()
 {
-    QFile file("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
+    QFile file(pathG);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         qDebug() << "Failed to open file";
@@ -315,3 +315,64 @@ int gestionXml::getNumberId()
     qDebug()<<id;
     return id;
 }
+
+QVector<int> gestionXml::idDay(QString data)
+{
+    QFile file(pathG);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qDebug() << "Failed to open file";
+    }
+    QDomDocument document;
+    if (!document.setContent(&file))
+    {
+        qDebug() << "failed to parse file";
+        file.close();
+    }
+
+    file.close();
+
+    QDomNodeList umgVars = dom_element.elementsByTagName("seance");
+
+    QDomNode lastElem = umgVars.at(umgVars.size() - 1);
+    dom_element = document.documentElement();
+    noeud = dom_element.firstChild();
+    QDomElement domElement = noeud.toElement();
+    QDomElement lastEEEE = lastElem.toElement();
+    int id = 0;
+    QVector<int> mesIds;
+
+    while (!noeud.isNull()) {
+        QDomElement domElement = noeud.toElement();
+        if (!domElement.isNull()) {
+            id++;
+
+            if (domElement.attribute("id") != "") {
+                id++;
+                id = domElement.attribute("id").toInt();
+            }
+
+            if (domElement.tagName() == "seance") {
+                QDomNode node = domElement.firstChild();
+                while (!node.isNull()) {
+                    QDomElement element = node.toElement();
+                    if (!element.isNull()) {
+                        const QString tagName(element.tagName());
+                        if (tagName == "dateArrivee") {
+                            if(element.text() == data){
+                                mesIds << id;
+//                                qDebug()<<mesIds;
+                            }
+                        }
+                    node = node.nextSibling();
+                    }
+                }
+            }
+        }
+        noeud = noeud.nextSibling();
+    }
+    file.close();
+
+    return mesIds;
+}
+

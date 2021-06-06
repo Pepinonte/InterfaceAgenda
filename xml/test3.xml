@@ -1,31 +1,38 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <seances>
  <seance id="1">
-  <dateArrivee>dim. févr. 7 2021</dateArrivee>
-  <heureArrivee>00:37:36</heureArrivee>
-  <dateDepart>dim. févr. 7 2021</dateDepart>
-  <heureDepart>00:37:36</heureDepart>
+  <dateArrivee>dim. juin 6 2021</dateArrivee>
+  <heureArrivee>20:15:59</heureArrivee>
+  <dateDepart>dim. juin 6 2021</dateDepart>
+  <heureDepart>20:15:59</heureDepart>
   <typeClient>debutant</typeClient>
  </seance>
  <seance id="2">
-  <dateArrivee>a</dateArrivee>
-  <heureArrivee>c</heureArrivee>
-  <dateDepart>b</dateDepart>
-  <heureDepart>c</heureDepart>
-  <typeClient>d</typeClient>
+  <dateArrivee>dim. juin 6 2021</dateArrivee>
+  <heureArrivee>20:15:59</heureArrivee>
+  <dateDepart>dim. juin 6 2021</dateDepart>
+  <heureDepart>20:15:59</heureDepart>
+  <typeClient>debutant</typeClient>
  </seance>
  <seance id="3">
-  <dateArrivee>a</dateArrivee>
-  <heureArrivee>c</heureArrivee>
-  <dateDepart>b</dateDepart>
-  <heureDepart>c</heureDepart>
-  <typeClient>d</typeClient>
+  <dateArrivee>dim. juin 6 2021</dateArrivee>
+  <heureArrivee>20:16:21</heureArrivee>
+  <dateDepart>dim. juin 6 2021</dateDepart>
+  <heureDepart>20:16:21</heureDepart>
+  <typeClient>debutant</typeClient>
  </seance>
-  <seance id="4">
-  <dateArrivee>sam. avri. 23 2021</dateArrivee>
-  <heureArrivee>14:37:36</heureArrivee>
-  <dateDepart>sam. avri. 23 2021</dateDepart>
-  <heureDepart>16:37:36</heureDepart>
+ <seance id="4">
+  <dateArrivee>mar. juin 8 2021</dateArrivee>
+  <heureArrivee>20:16:37</heureArrivee>
+  <dateDepart>mar. juin 8 2021</dateDepart>
+  <heureDepart>20:16:37</heureDepart>
+  <typeClient>debutant</typeClient>
+ </seance>
+ <seance id="5">
+  <dateArrivee>lun. juin 7 2021</dateArrivee>
+  <heureArrivee>20:17:18</heureArrivee>
+  <dateDepart>lun. juin 7 2021</dateDepart>
+  <heureDepart>20:17:18</heureDepart>
   <typeClient>debutant</typeClient>
  </seance>
 </seances>
