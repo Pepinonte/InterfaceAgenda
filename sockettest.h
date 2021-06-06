@@ -19,6 +19,7 @@ public slots:
 
 private:
     QTcpSocket *socket;
+    QString pathG = "C:/Users/Christian GROS/Documents/Code/InterfaceAgenda/xml/test3.xml";
     
 };
 

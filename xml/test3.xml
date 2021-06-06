@@ -33,6 +33,56 @@
   <heureArrivee>20:17:18</heureArrivee>
   <dateDepart>lun. juin 7 2021</dateDepart>
   <heureDepart>20:17:18</heureDepart>
+  <dateArrivee>dim. fevr. 7 2021</dateArrivee>
+  <heureArrivee>00:37:36</heureArrivee>
+  <dateDepart>dim. f?vr. 7 2021</dateDepart>
+  <heureDepart>00:37:36</heureDepart>
   <typeClient>debutant</typeClient>
  </seance>
-</seances>
+ <seance id="2">
+  <dateArrivee>sam. mai 22 2021</dateArrivee>
+  <heureArrivee>20:20:57</heureArrivee>
+  <dateDepart>sam. mai 22 2021</dateDepart>
+  <heureDepart>20:20:57</heureDepart>
+  <typeClient>debutant</typeClient>
+ </seance>
+ <seance id="4">
+  <dateArrivee>lun. mai 24 2021</dateArrivee>
+  <heureArrivee>18:37:35</heureArrivee>
+  <dateDepart>lun. mai 24 2021</dateDepart>
+  <heureDepart>18:37:35</heureDepart>
+  <typeClient>debutant</typeClient>
+ </seance>
+ <seance id="5">
+  <dateArrivee>lun. mai 24 2021</dateArrivee>
+  <heureArrivee>18:37:35</heureArrivee>
+  <dateDepart>lun. mai 24 2021</dateDepart>
+  <heureDepart>18:37:35</heureDepart>
+  <typeClient>debutant</typeClient>
+ </seance>
+ <seance id="7">
+  <dateArrivee>lun. mai 24 2021</dateArrivee>
+  <heureArrivee>18:37:35</heureArrivee>
+  <dateDepart>lun. mai 24 2021</dateDepart>
+  <heureDepart>18:37:35</heureDepart>
+  <typeClient>debutant</typeClient>
+ </seance>
+ <seance id="8">
+  <dateArrivee>mar. mai 25 2021</dateArrivee>
+  <heureArrivee>18:45:03</heureArrivee>
+  <dateDepart>mar. mai 25 2021</dateDepart>
+  <heureDepart>18:45:03</heureDepart>
+  <typeClient>debutant</typeClient>
+ </seance>
+ <seance id="9">
+  <dateArrivee>mer. mai 26 2021</dateArrivee>
+  <heureArrivee>18:46:50</heureArrivee>
+  <dateDepart>mer. mai 26 2021</dateDepart>
+  <heureDepart>18:46:50</heureDepart>
+  <typeClient>debutant</typeClient>
+ </seance>
+ <seance id="10">
+  <dateArrivee>dim. juin 6 2021</dateArrivee>
+  <heureArrivee>12:23:45</heureArrivee>
+  <dateDepart>dim. juin 6 2021</dateDepart>
+  <heureDepart>12:23:45</heureDepart>

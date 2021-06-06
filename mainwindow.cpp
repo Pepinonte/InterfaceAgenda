@@ -4,6 +4,8 @@
 #include "ajouter.h"
 #include "editseance.h"
 #include "supseance.h"
+#include "gestionxml.h"
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -39,3 +41,4 @@ void MainWindow::on_pushButton_4_clicked()
     win4.setModal(true);
     win4.exec();
 }
+

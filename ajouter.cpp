@@ -32,6 +32,6 @@ void ajouter::on_btnAjouter_clicked()
     QString type = ui->type->currentText();
 
     xml.openFile("C:/Users/Christian GROS/Documents/Code/InterfaceAgenda/xml/test3.xml");
-    xml.newSeance(dateArrivee.toString(), dateDepart.toString(), heureDepart.toString(), heureArrivee.toString(), type);
-    cTest.Connect();
+    xml.newSeance(dateArrivee.toString(), dateDepart.toString(), heureDepart.toString(), heureArrivee.toString(), type);p
+    cTest.Connect();p
 }
