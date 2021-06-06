@@ -64,6 +64,6 @@ void editSeance::on_calendarWidget_clicked(const QDate &date)
     for (int i = mesIds.length();i>=1;i--)
     {
         ui->seancesJournne->addItem(QString::number(i));
-    }p
+    }
 }
 

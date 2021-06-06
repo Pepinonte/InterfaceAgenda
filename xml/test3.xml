@@ -86,3 +86,12 @@
   <heureArrivee>12:23:45</heureArrivee>
   <dateDepart>dim. juin 6 2021</dateDepart>
   <heureDepart>12:23:45</heureDepart>
+ </seance>
+ <seance id="11">
+  <dateArrivee>dim. juin 6 2021</dateArrivee>
+  <heureArrivee>20:32:41</heureArrivee>
+  <dateDepart>dim. juin 6 2021</dateDepart>
+  <heureDepart>20:32:41</heureDepart>
+  <typeClient>debutant</typeClient>
+ </seance>
+</seances>
