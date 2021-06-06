@@ -23,7 +23,7 @@ ajouter::~ajouter()
     delete ui;
 }
 
-void ajouter::on_pushButton_clicked()
+void ajouter::on_btnAjouter_clicked()
 {
     QDate dateArrivee = ui->dateArrivee->date();
     QDate dateDepart = ui->dateDepart->date();
@@ -31,8 +31,7 @@ void ajouter::on_pushButton_clicked()
     QTime heureArrivee = ui->heureArrivee->time();
     QString type = ui->type->currentText();
 
-    cTest.Connect();
-    xml.openFile("C:/Users/Christian GROS/Documents/xmlClass/test3.xml");
-
+    xml.openFile("C:/Users/Christian GROS/Documents/Code/InterfaceAgenda/xml/test3.xml");
     xml.newSeance(dateArrivee.toString(), dateDepart.toString(), heureDepart.toString(), heureArrivee.toString(), type);
+    cTest.Connect();
 }
