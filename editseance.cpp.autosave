@@ -58,12 +58,6 @@ void editSeance::on_calendarWidget_clicked(const QDate &date)
             if(xml.getTab(a) == date.toString())
             {
                 t++;
-
-
-
-
-
-
             }
         }
         ui->nombreSeances->setValue(t/2);

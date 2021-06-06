@@ -208,7 +208,6 @@ void gestionXml::supElement(QString id)
             i++;
             qDebug()<<i;
             lastElem = umgVars.at(umgVars.size() - i);
-            qDebug()<<"nop";
         }
         noeud = noeud.nextSibling();
     }
@@ -227,10 +226,11 @@ void gestionXml::supElement(QString id)
 
 }
 
-void gestionXml::modElement(gestionXml& xml)
+void gestionXml::modElement(gestionXml& xml, QString dateArrivee, QString dateDepart, QString heureDepart, QString heureArrivee, QString type, int id)
 {
-    xml.supElement("2");
-    xml.newSeance("1","2","3","4","5");
+    QString str;
+    xml.supElement(QString::number(id));
+    xml.newSeance(dateArrivee,dateDepart,heureDepart,heureArrivee,type);
 }
 
 void gestionXml::setSenace(QString id)
