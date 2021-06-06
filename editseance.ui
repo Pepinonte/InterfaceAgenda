@@ -76,6 +76,21 @@ QCalendarWidget QAbstractItemView:enabled{
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
+          <widget class="QLabel" name="nombreSeances_4">
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Seances dans la journee</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QLabel" name="nombreSeances_2">
            <property name="font">
             <font>
@@ -169,6 +184,13 @@ QCalendarWidget QAbstractItemView:enabled{
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QComboBox" name="seancesJournne">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QSpinBox" name="nombreSeances">
            <property name="styleSheet">

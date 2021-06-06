@@ -17,7 +17,7 @@ void gestionXml::openFile(QString path)
         if(!document.setContent(&file))
             qDebug()<< "erreur lors du chargement";
     }
-//    file.close();
+    file.close();
 }
 
 void gestionXml::readElement(QString data)
@@ -251,7 +251,6 @@ void gestionXml::setSenace(QString id)
                         if (!element.isNull()) {
                             const QString tagName(element.tagName());
                             tab[n] = element.text();
-//                            qDebug() << tab[n];
                             node = node.nextSibling();
                             n++;
                         }
@@ -376,5 +375,3 @@ QVector<int> gestionXml::idDay(QString data)
 
     return mesIds;
 }
-
-
